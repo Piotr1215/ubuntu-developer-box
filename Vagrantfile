@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Oh My ZSH Install section
 
   # Install git and zsh prerequisites
-  config.vm.provision :shell, path: => install.sh
+  config.vm.provision :shell, path: "install.sh"
 
   ############################################################
 

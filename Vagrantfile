@@ -23,7 +23,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.provision :shell, inline: "touch ~/.tmux.conf"
   # config.vm.provision :shell, inline: "touch ~/.vim"
   # config.vm.provision :shell, inline: "touch ~/.vimrc"
-  # config.vm.provision :shell, inline: "touch ~/.zshrc"
+  config.vm.provision :shell, inline: "touch ~/.zshrc"
+
   # config.vm.provision :shell, inline: "touch ~/.oh-my-zsh"
   # config.vm.provision :shell, inline: "touch ~/.bashrc"
 
@@ -41,6 +42,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Install my dotfiles
   config.vm.provision :shell,
     inline: "git clone git://github.com/Piotr1215/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install"
+
+  config.vm.provision :shell, inline: "ln -s /home/vagrant/.zshrc /home/vagrant/.dotfiles/.zshrc"
 
   ############################################################
 

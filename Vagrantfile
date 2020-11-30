@@ -14,6 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Install git and zsh prerequisites
   config.vm.provision :shell, inline: "apt-get -y install git"
   config.vm.provision :shell, inline: "apt-get -y install zsh"
+  config.vm.provision :shell, inline: "exec zsh"
   # config.vm.provision :shell, inline: "apt-get -y install figlet"
   # config.vm.provision :shell, inline: "apt-get -y install tmux"
   # config.vm.provision :shell, inline: "apt-get -y install pydf"
@@ -37,7 +38,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     inline: "cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc"
 
   # Change the vagrant user's shell to use zsh
-  config.vm.provision :shell, inline: "chsh -s $(which zsh)"
+
 
   # Install my dotfiles
   config.vm.provision :shell,

@@ -7,7 +7,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Pick a box to use:
   config.vm.box = "ubuntu/trusty64"
-
+  config.vm.synced_folder "/home/decoder/dev", "/home/vagrant/dev"
   ############################################################
   # Oh My ZSH Install section
 

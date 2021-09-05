@@ -92,6 +92,10 @@ process "→ Installing kubectx and kubens - quickly switch kubernetes context a
 process "→ Installing Okteto for local development"
   curl https://get.okteto.com -sSfL | sh
 
+#process "→ Installing starship command prompt"
+  #sh -c "$(wget -O- https://starship.rs/install.sh)" "" --unattended
+  #sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+
 process "→ Setting zsh as default shell"
   sudo chsh -s $(which zsh) vagrant
   sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="3den"/g' ~/.zshrc
